@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2040 영통생활권 인구배분 발표</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="progress-line" aria-hidden="true"><span></span></div>
+    <nav class="topbar" aria-label="문서 내비게이션">
+      <a class="brand" href="#intro">Yeongtong 2040</a>
+      <div class="nav-links">
+        <a href="#baseline">기준선</a>
+        <a href="#population">수요구조</a>
+        <a href="#capacity">검토권역</a>
+        <a href="#risk">부담</a>
+        <a href="#deal">배분안</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section hero" id="intro">
+        <div class="hero-bg" aria-hidden="true">
+          <img class="hero-living-map" src="./assets/suwon_living_area_hero.svg" alt="" />
+          <div class="city-grid"></div>
+        </div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">2040 수원 생활권별 인구배분 브리핑</p>
+          <h1>영통생활권<br />계획 반영 기준값<br /><span data-bind="claim.requested">1.9만 명</span></h1>
+          <div class="hero-meta">
+            <span>대상지: <b data-bind="scope">망포1·2동, 매탄2·3·4동, 영통1·2·3동</b></span>
+            <span>기준: <b>주민등록인구(상주인구)</b></span>
+            <span>역할: <b data-bind="role">첨단기술산업 + 배후주거</b></span>
+          </div>
+          <a class="scroll-cue" href="#baseline" aria-label="공식 기준선 섹션으로 이동">
+            <span></span>
+            근거로 내려가기
+          </a>
+        </div>
+        <aside class="hero-figure reveal late">
+          <div class="figure-header">
+            <span>Population Allocation Board</span>
+            <strong data-bind="claim.requested">1.9만 명</strong>
+          </div>
+          <div class="hero-flow" aria-label="현재 인구에서 2040 계획인구까지의 계획 격차">
+            <div class="flow-node">
+              <span>현재</span>
+              <b data-bind="claim.current">22.4만 명</b>
+            </div>
+            <div class="flow-rail">
+              <i></i>
+              <em>공식계획 유지선</em>
+            </div>
+            <div class="flow-node target">
+              <span>2040 공식</span>
+              <b data-bind="claim.official2040">24.3만 명</b>
+            </div>
+          </div>
+          <div class="hero-share">
+            <div>
+              <span>수원 전체 증가분</span>
+              <b data-bind="claim.suwonIncrease">9.9만 명</b>
+            </div>
+            <div class="share-bar" aria-hidden="true"><i></i></div>
+            <div>
+              <span>계획 반영 기준값</span>
+              <b data-bind="claim.requested">1.9만 명</b>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section proof population-baseline" id="baseline">
+        <div class="section-title reveal">
+          <p class="eyebrow">01 Population Baseline</p>
+          <h2>영통생활권은 현재 22.4만 명, 2040 공식계획은 24.3만 명이다. 차이 1.9만 명이 계획 검토의 기준선이다.</h2>
+        </div>
+        <div class="baseline-grid">
+          <div class="metric-xl reveal">
+            <span>현재 주민등록 인구</span>
+            <strong data-bind="claim.current">22.4만 명</strong>
+            <small>2026-03-31, 주민등록인구(상주) 8개 행정동 합계</small>
+          </div>
+          <div class="metric-xl reveal">
+            <span>2040 공식 계획인구</span>
+            <strong data-bind="claim.official2040">24.3만 명</strong>
+            <small>2040 수원도시기본계획</small>
+          </div>
+          <div class="metric-xl accent reveal">
+            <span>공식계획 유지값</span>
+            <strong data-bind="claim.gap">1.9만 명</strong>
+            <small>공식계획 유지선과 현재 몫 환산값이 만나는 값</small>
+          </div>
+        </div>
+        <div class="baseline-map-dashboard">
+          <figure class="admin-map-card reveal">
+            <div class="map-frame">
+              <div id="yeongtongSvgMap" class="yeongtong-svg-map" data-map-mode="baseline" role="img" aria-label="영통생활권 8개 행정동 SVG 개념 지도"></div>
+              <div class="gis-kpi-panel" aria-label="영통생활권 GIS 핵심 지표">
+                <span class="board-kicker">GIS Population Board</span>
+                <strong>22.4만 → 24.3만</strong>
+                <div class="gis-kpi-grid">
+                  <span><b>1.9만</b><small>현상유지값</small></span>
+                  <span><b>8개 동</b><small>행정동</small></span>
+                  <span><b>3권역</b><small>망포·영통·매탄</small></span>
+                  <span><b>11.12㎢</b><small>행정구역면적</small></span>
+                </div>
+              </div>
+              <div class="map-focus-badge">
+                <span>Yeongtong Living Area</span>
+                <strong>8개 행정동 · 22.4만 명</strong>
+              </div>
+            </div>
+            <figcaption>
+              <b>GIS 행정동 경계 기반 SVG</b>
+              <span>경기도 행정동 GeoJSON에서 수원시 영통생활권 8개 행정동을 추출해 발표용으로 단순화했다.</span>
+              <small class="source-note" data-source-key="baseline"></small>
+            </figcaption>
+          </figure>
+          <div class="baseline-map-side">
+            <div class="bar-board reveal late">
+              <span class="board-kicker">Resident Registration</span>
+              <h3>동별 주민등록 인구</h3>
+              <div id="dongBars" class="dong-bars"></div>
+              <div id="dongColorLegend" class="dong-color-legend"></div>
+            </div>
+            <div class="trend-compact-board reveal late">
+              <span class="board-kicker">5-10 Year Trend</span>
+              <h3>자연증가가 아니라 공식계획 유지선이 핵심</h3>
+              <div id="trendLogicGraphic" class="trend-logic-graphic"></div>
+              <div id="trendSummaryCards" class="trend-summary compact"></div>
+              <div id="residentTrendChart" class="trend-chart compact"></div>
+              <div class="compact-proof">
+                <img src="./assets/living_area_population_plan.png" alt="2040 수원도시기본계획 생활권별 인구계획 표" />
+                <p><b>공식계획 2040</b><span>영통생활권 24.3만 명, 수원 전체 19.0%.</span></p>
+              </div>
+              <small class="board-source" data-source-key="trend"></small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section population" id="population">
+        <div class="section-title reveal">
+          <p class="eyebrow">02 Population Profile</p>
+          <h2>단순 배후주거지가 아니라, 복합 수요가 이미 존재한다.</h2>
+        </div>
+        <div class="population-demand-layout">
+          <div class="profile-visual-grid">
+            <figure class="profile-map-panel reveal">
+              <div id="profileGeoMap" class="yeongtong-svg-map profile-geo-map" data-map-mode="profile" role="img" aria-label="영통생활권 인구 비율 핫스팟 지도"></div>
+              <figcaption>
+                <b>Population Hotspot Map</b>
+                <span>동별 인구 비율이 두드러지는 권역을 표시했다. 회색 숫자는 해당 지표의 실제 인구수다.</span>
+              </figcaption>
+            </figure>
+            <div class="demand-matrix reveal late" id="demandMatrix"></div>
+          </div>
+          <div class="profile-source-only reveal late">
+            <small class="board-source" data-source-key="profile"></small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section capacity" id="capacity">
+        <div class="section-title reveal">
+          <p class="eyebrow">03 Capacity Logic</p>
+          <h2>추가 인구는 조건부 수용 가능성과 기반시설 보완 필요성을 함께 검토해야 한다.</h2>
+        </div>
+        <div class="capacity-thesis-strip reveal">
+          <b>검토 방향</b>
+          <span>망포·영통·청명 축은 역세권 접근성, 매탄·영통권은 정비 조건, 산업-주거 접점은 직주근접 조건을 확인하는 후보권역이다.</span>
+        </div>
+        <div class="capacity-layout">
+          <div class="map-panel geo-capacity reveal">
+            <div id="capacityGeoMap" class="yeongtong-svg-map capacity-geo-map" data-map-mode="capacity" role="img" aria-label="영통생활권 조건부 검토 레이어 지도"></div>
+            <div class="capacity-layer-list" aria-label="조건부 검토 레이어">
+              <span class="layer-chip tone-green">역세권</span>
+              <span class="layer-chip tone-amber">정비</span>
+              <span class="layer-chip tone-black">산업접점</span>
+              <span class="layer-chip tone-blue">생활SOC</span>
+            </div>
+            <div class="capacity-map-caption">
+              <b>조건부 검토 레이어</b>
+              <span>망포·영통·청명·매탄권선 역세권, 매탄·영통권 정비 필요지, 산업-주거 접점, 생활SOC 보완축을 겹쳐 어느 권역에서 조건 검토가 필요한지 설명한다.</span>
+              <small class="source-note" data-source-key="capacity"></small>
+            </div>
+          </div>
+          <div class="capacity-list reveal late" id="capacityList"></div>
+          <div class="site-action-board reveal late">
+            <div>
+              <span class="board-kicker">Specific Capacity Sites</span>
+              <h3>개발·정비·고밀화는 후보권역별 조건 검토로만 제시한다</h3>
+            </div>
+            <div id="specificSites" class="site-action-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section risk" id="risk">
+        <div class="section-title reveal">
+          <p class="eyebrow">04 Conditions</p>
+          <h2>1.9만 명은 공식계획 유지선, 초과분은 고밀 부담이다.</h2>
+        </div>
+        <div class="condition-thesis reveal">
+          <span>Condition Logic</span>
+          <strong>1.9만 명은 현재 22.4만 명에서 2040 공식계획 24.3만 명으로 가는 공식계획 유지선이다.</strong>
+          <p>다만 영통생활권은 면적 대비 인구 몫이 크고 시가화율이 높은 고밀 생활권이므로, 1.9만 명을 초과하는 증가는 별도 기반시설 검토와 추가 근거 제시가 필요하다.</p>
+        </div>
+        <div class="condition-metrics reveal" id="conditionMetrics"></div>
+        <div class="risk-analysis-layout">
+          <div class="risk-ledger reveal late">
+            <span class="board-kicker">Risk to Condition</span>
+            <h3>부담 지표를 바로 보완 조건으로 연결한다</h3>
+            <p class="ledger-note">등급 기준: 공식 밀도·공식계획 혼잡 지점은 `부담 심각`, 특정 동의 인구구조·용지 조건은 `부담 보통`, 산업 접점은 관리형 조건으로 표기했다.</p>
+            <div id="riskLedger"></div>
+          </div>
+        </div>
+        <div class="quote-strip reveal">
+          <span>진단 요약</span>
+          <strong>고밀 생활권에서는 현 계획 유지값 자체보다 교통·정비·생활SOC 보완과의 연동 여부가 핵심 검토 기준이다.</strong>
+        </div>
+      </section>
+
+      <section class="section deal" id="deal">
+        <div class="deal-hero reveal">
+          <p class="eyebrow">05 Allocation Evidence</p>
+          <h2>공식계획 유지 기준값</h2>
+          <strong class="claim-number" data-bind="claim.requested">1.9만 명</strong>
+          <p>2040 계획인구 24.3만 명을 실행계획 기준으로 반영하기 위한 근거 기반 기준값이다. 단, 역세권·정비축·직주근접 권역 중심의 조건부 검토가 필요하다.</p>
+          <div class="role-pill">2040 희망 역할 · 중심지+주거형+산업·일자리형 혼합생활권</div>
+        </div>
+        <div class="deal-layout">
+          <div class="allocation-evidence reveal">
+            <article><span>현재 생활권 몫</span><b data-bind="claim.currentShare">18.9%</b><small>22.4만 / 118.6만</small></article>
+            <article class="target"><span>계획 반영 기준값</span><b data-bind="claim.requested">1.9만 명</b><small>9.9만 × 현재 몫</small></article>
+            <article><span>공식계획 유지값</span><b data-bind="claim.gap">1.9만 명</b><small>24.3만 - 22.4만</small></article>
+          </div>
+          <div class="benchmark-board reveal late">
+            <div class="benchmark-head">
+              <div>
+                <span class="board-kicker">Why 1.9?</span>
+                <h3>1.9만 명이 나오는 세 가지 확인</h3>
+              </div>
+              <div id="benchmarkCriteria" class="benchmark-criteria"></div>
+            </div>
+            <div id="livingAreaBenchmarks" class="benchmark-table"></div>
+            <small class="board-source" data-source-key="benchmark"></small>
+          </div>
+          <div class="deal-source-strip reveal late">
+            <b>계산 기준</b>
+            <span>비교 가정 총량과 공식계획 생활권 기준을 분리해 보되, 두 접근 모두 만 명 단위에서는 약 1.9만 명으로 수렴한다.</span>
+            <small class="board-source" data-source-key="deal"></small>
+          </div>
+          <div class="formula reveal late">
+              <h3>계산 근거 <small>비교 가정값과 공식계획값 분리</small></h3>
+            <div class="basis-split">
+              <article>
+                  <span>비교 가정 총량</span>
+                <b>118.6만 → 128.5만</b>
+                  <small>비교 가정값, 추가 9.9만 명 배분</small>
+              </article>
+              <article>
+                <span>공식계획 생활권 기준</span>
+                <b>수원 128.0만 / 영통 24.3만</b>
+                <small>2040 수원도시기본계획 생활권별 인구계획</small>
+              </article>
+            </div>
+            <div id="formulaRows"></div>
+          </div>
+        </div>
+        <div class="final-sentence reveal">
+          영통생활권의 공식계획 유지 기준값은 <b>1.9만 명</b>이다. 이는 현재 22.4만 명에서 2040 공식계획 24.3만 명으로 가는 계획 격차이며, 비교 가정 증가분 9.9만 명 중 현재 생활권 몫 18.9%를 반영한 값과도 거의 일치한다. 다만 영통생활권은 고밀·고시가화 생활권이므로, 1.9만 명은 역세권·정비축·직주근접 권역 중심의 조건부 검토값으로 관리해야 한다.
+        </div>
+      </section>
+    </main>
+
+    <footer class="doc-footer">
+      <b>Data integrity</b>
+      <span id="sourceList"></span>
+    </footer>
+  </body>
+</html>
