@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>2040 영통생활권 인구배분 발표</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./data.js" defer></script>
     <script src="./app.js" defer></script>
+    <script src="./3d-data.js" defer></script>
+    <script type="module" src="./three-scene.js"></script>
   </head>
   <body>
     <div class="progress-line" aria-hidden="true"><span></span></div>
@@ -16,6 +19,7 @@
         <a href="#baseline">기준선</a>
         <a href="#population">수요구조</a>
         <a href="#capacity">검토권역</a>
+        <a href="#strategy-3d">3D전략</a>
         <a href="#risk">부담</a>
         <a href="#deal">배분안</a>
       </div>
@@ -196,6 +200,70 @@
               <h3>개발·정비·고밀화는 후보권역별 조건 검토로만 제시한다</h3>
             </div>
             <div id="specificSites" class="site-action-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section strategy-3d" id="strategy-3d">
+        <div class="section-title reveal">
+          <p class="eyebrow">03B 3D Strategy Map</p>
+          <h2>추가 1.9만 명은 특정 필지 배치가 아니라, 역세권·정비·접점·SOC 조건을 함께 보는 공식계획 유지 기준값이다.</h2>
+        </div>
+        <div class="yt3d-board reveal" id="yt3dScene">
+          <div class="yt3d-head">
+            <div>
+              <span class="board-kicker">Conceptual 3D Planning Prototype</span>
+              <h3>영통생활권 경량 3D 전략지도</h3>
+              <p data-yt3d-copy>8개 행정동과 3대 권역을 한 번에 보는 전략 개념도</p>
+            </div>
+            <div class="yt3d-kpis" aria-label="3D 전략지도 핵심 수치">
+              <article><span>현재 상주인구</span><b>22.4만 명</b></article>
+              <article><span>2040 공식계획</span><b>24.3만 명</b></article>
+              <article class="target"><span>계획 유지 기준값</span><b>1.9만 명</b></article>
+            </div>
+          </div>
+          <div class="yt3d-stage">
+            <div class="yt3d-canvas" role="img" aria-label="영통생활권 8개 행정동의 3D 도시계획 전략지도"></div>
+            <div class="yt3d-overlay">
+              <div class="yt3d-controls" aria-label="3D 지도 장면 전환">
+                <button type="button" class="is-active" data-yt3d-view="overview">전체</button>
+                <button type="button" data-yt3d-view="transit">역세권</button>
+                <button type="button" data-yt3d-view="renewal">정비</button>
+                <button type="button" data-yt3d-view="interface">접점/SOC</button>
+              </div>
+              <div class="yt3d-legend" aria-label="3D 지도 범례">
+                <span class="tone-green">역세권 영향권 링</span>
+                <span class="tone-amber">정비·관리 검토권역</span>
+                <span class="tone-black">산업-주거 기능 접점</span>
+                <span class="tone-blue">SOC 보완축</span>
+              </div>
+            </div>
+            <div class="yt3d-caption">
+              <b>개념 시각화 / 실제 높이 아님</b>
+              <span>본 지도는 영통생활권 전략 검토를 위한 개념도이며, 실제 건물 높이·용적률·사업 경계를 재현한 것이 아닙니다. 역세권 링, 정비권역, SOC 보완축은 정책·계획 검토를 위한 도식 표현입니다.</span>
+            </div>
+          </div>
+          <div class="yt3d-layer-grid">
+            <article class="tone-green">
+              <span>01 접근성</span>
+              <b>역세권 영향권</b>
+              <p>망포·영통·청명축을 중심으로 접근성 검토 범위를 표시한다.</p>
+            </article>
+            <article class="tone-amber">
+              <span>02 정비</span>
+              <b>정비·관리 가능성</b>
+              <p>노후주거와 생활SOC 보완이 함께 필요한 권역을 개념 매스로 표현한다.</p>
+            </article>
+            <article class="tone-black">
+              <span>03 접점</span>
+              <b>산업-주거 기능 접점</b>
+              <p>삼성전자 중심 첨단산업 배후주거 기능을 공간적으로 설명한다.</p>
+            </article>
+            <article class="tone-blue">
+              <span>04 조건</span>
+              <b>생활SOC 보완축</b>
+              <p>추가 인구 수용은 기반시설 보완 조건과 함께 판단해야 한다.</p>
+            </article>
           </div>
         </div>
       </section>

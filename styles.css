@@ -2575,6 +2575,282 @@ figcaption .source-note,
 .site-action-card.tone-amber { border-top-color: var(--amber); }
 .site-action-card.tone-blue { border-top-color: #245b91; }
 
+.strategy-3d.section {
+  padding-top: 92px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(0, 109, 53, 0.08), transparent 28%),
+    radial-gradient(circle at 82% 30%, rgba(36, 91, 145, 0.12), transparent 30%),
+    linear-gradient(180deg, #f7f8fb 0%, #eef3fb 100%);
+}
+
+.strategy-3d .section-title {
+  max-width: 1120px;
+  margin-bottom: 28px;
+}
+
+.strategy-3d .section-title h2 {
+  max-width: 1110px;
+  font-size: 44px;
+  line-height: 1.16;
+}
+
+.yt3d-board {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(9, 24, 39, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.yt3d-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(460px, 0.9fr);
+  gap: 26px;
+  align-items: end;
+  padding: 26px 30px 24px;
+}
+
+.yt3d-head h3 {
+  margin: 6px 0 8px;
+  color: var(--ink);
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.yt3d-head p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.yt3d-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.yt3d-kpis article {
+  min-height: 92px;
+  padding: 14px 16px;
+  background: var(--surface-soft);
+  border-top: 5px solid var(--black);
+}
+
+.yt3d-kpis article.target {
+  border-top-color: var(--green);
+  background: #eaf8ef;
+}
+
+.yt3d-kpis span,
+.yt3d-kpis b {
+  display: block;
+}
+
+.yt3d-kpis span {
+  color: var(--quiet);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.yt3d-kpis b {
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 26px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.yt3d-kpis .target b {
+  color: var(--green);
+}
+
+.yt3d-stage {
+  position: relative;
+  min-height: 650px;
+  margin: 0 30px 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(7, 17, 29, 0.96), rgba(13, 28, 42, 0.98)),
+    radial-gradient(circle at 62% 30%, rgba(125, 240, 164, 0.16), transparent 38%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-deep);
+}
+
+.yt3d-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.yt3d-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.yt3d-overlay {
+  position: absolute;
+  z-index: 4;
+  inset: 22px 22px auto 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.yt3d-controls,
+.yt3d-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.yt3d-controls button,
+.yt3d-legend span {
+  min-height: 34px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+}
+
+.yt3d-controls button {
+  cursor: pointer;
+}
+
+.yt3d-controls button.is-active {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.yt3d-legend {
+  justify-content: flex-end;
+  max-width: 520px;
+}
+
+.yt3d-legend span {
+  position: relative;
+  padding-left: 26px;
+}
+
+.yt3d-legend span::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.yt3d-legend .tone-green { color: var(--green); }
+.yt3d-legend .tone-amber { color: var(--amber); }
+.yt3d-legend .tone-black { color: var(--black); }
+.yt3d-legend .tone-blue { color: var(--blue); }
+
+.yt3d-caption {
+  position: absolute;
+  z-index: 5;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border-left: 6px solid var(--green);
+  color: var(--ink);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+.yt3d-caption b {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.yt3d-caption span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.yt3d-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 30px 30px;
+}
+
+.yt3d-layer-grid article {
+  min-height: 136px;
+  padding: 18px 18px 16px;
+  background: var(--surface-soft);
+  border-top: 6px solid var(--black);
+}
+
+.yt3d-layer-grid article span,
+.yt3d-layer-grid article b,
+.yt3d-layer-grid article p {
+  display: block;
+}
+
+.yt3d-layer-grid article span {
+  color: var(--quiet);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.yt3d-layer-grid article b {
+  margin: 9px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.yt3d-layer-grid article p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.yt3d-layer-grid .tone-green { border-top-color: var(--green); }
+.yt3d-layer-grid .tone-amber { border-top-color: var(--amber); }
+.yt3d-layer-grid .tone-black { border-top-color: var(--black); }
+.yt3d-layer-grid .tone-blue { border-top-color: var(--blue); }
+
+.yt3d-board.is-unsupported .yt3d-stage::after {
+  content: "이 브라우저에서는 WebGL 3D 지도를 표시할 수 없습니다.";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: #07111d;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+
 .condition-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3502,12 +3778,36 @@ figcaption .source-note,
   .baseline-map-dashboard,
   .profile-visual-grid,
   .capacity-layout,
+  .yt3d-head,
+  .yt3d-layer-grid,
   .risk-analysis-layout,
   .deal,
   .allocation-map-card,
   .source-stage,
   .trend-dashboard,
   .trend-main {
+    grid-template-columns: 1fr;
+  }
+
+  .yt3d-stage {
+    min-height: 540px;
+    margin-inline: 18px;
+  }
+
+  .yt3d-head {
+    padding-inline: 20px;
+  }
+
+  .yt3d-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .yt3d-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .yt3d-caption {
     grid-template-columns: 1fr;
   }
 
